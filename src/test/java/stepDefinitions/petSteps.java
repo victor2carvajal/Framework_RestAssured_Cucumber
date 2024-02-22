@@ -4,17 +4,14 @@ import endPoints.petEndPoints;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 
 public class petSteps {
 
     private Response response;
-    private static final String baseURI = "http://localhost:8080/api/v3/";
 
     @Given("I add a new pet with the following body:")
-    public void i_add_a_new_pet(String requestBody) {
+    public void userAddNewPet(String requestBody) {
 
         response = petEndPoints.addNewPet(requestBody);
         int actualStatusCode = response.getStatusCode();
