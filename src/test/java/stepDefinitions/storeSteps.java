@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
+import org.junit.Assert;
 
 public class storeSteps {
 
@@ -13,36 +14,18 @@ public class storeSteps {
     @Given("I place an order with the following body:")
     public void userAddNewPet(String requestBody) {
         response = storeEndPoints.placeAnOrder(requestBody);
-        int actualStatusCode = response.getStatusCode();
-        System.out.println(actualStatusCode);
-    }
-
-    @Then("order is placed")
-    public  void orderIsPlaced(){
-
+        Assert.assertEquals(200, response.getStatusCode());
     }
 
     @When("I find purchase order by {string}")
     public void findPurchaseOrderById(String id){
         response = storeEndPoints.findPurchaseOrderById(id);
-        int actualStatusCode = response.getStatusCode();
-        System.out.println(actualStatusCode);
+        Assert.assertEquals(200, response.getStatusCode());
     }
 
-    @Then("Order is found")
-    public void orderIsFound(){
-    }
-
-    @When("I delete purchase order by {string}")
+    @Then("I delete purchase order by {string}")
     public void deletePurchaseOrderById(String id){
         response = storeEndPoints.deletePurchaseOrderById(id);
-        int actualStatusCode = response.getStatusCode();
-        System.out.println(actualStatusCode);
+        Assert.assertEquals(200, response.getStatusCode());
     }
-
-    @Then("Order is deleted")
-    public void orderIsDeleted(){
-
-    }
-
 }

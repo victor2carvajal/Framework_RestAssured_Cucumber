@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
+import org.junit.Assert;
 
 public class userSteps {
 
@@ -13,8 +14,7 @@ public class userSteps {
     @Given("I create a new user with the following body:")
     public void createUser(String requestBody) {
         response = userEndPoints.createUser(requestBody);
-        int actualStatusCode = response.getStatusCode();
-        System.out.println(actualStatusCode);
+        Assert.assertEquals(200, response.getStatusCode());
     }
 
     @Then("User is created")
