@@ -1,0 +1,1 @@
+{"uuid":"52208372-eb12-41e0-8355-3f06a6e64107","name":"Scenario Outline: User send bad request and cannot add, update and delete a pet","children":["f02fed23-021a-470e-8a53-45b29d14f901"],"befores":[],"afters":[],"start":1708626637018,"stop":1708626637119}

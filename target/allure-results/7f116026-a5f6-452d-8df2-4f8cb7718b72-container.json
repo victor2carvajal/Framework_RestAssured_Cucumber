@@ -1,0 +1,1 @@
+{"uuid":"7f116026-a5f6-452d-8df2-4f8cb7718b72","name":"Scenario Outline: User send bad request and cannot create, update and delete an user","children":["bd0d4d9f-f7fb-471b-a824-cbb812980c17"],"befores":[],"afters":[],"start":1708626637894,"stop":1708626637957}
