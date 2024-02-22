@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
+import org.junit.Assert;
 
 public class petSteps {
 
@@ -12,40 +13,20 @@ public class petSteps {
 
     @Given("I add a new pet with the following body:")
     public void userAddNewPet(String requestBody) {
-
         response = petEndPoints.addNewPet(requestBody);
-        int actualStatusCode = response.getStatusCode();
-        System.out.println(actualStatusCode);
-    }
-
-    @Then("Pet is added")
-    public void pet_is_added() {
-
+        Assert.assertEquals(200, response.getStatusCode());
     }
 
     @When("I update new pet with the following body")
-    public void i_update_new_pet(String requestBody){
-
+    public void updatePet(String requestBody){
         response = petEndPoints.updatePet(requestBody);
-        int actualStatusCode = response.getStatusCode();
-        System.out.println(actualStatusCode);
+        Assert.assertEquals(200, response.getStatusCode());
     }
 
-    @Then("Pet is updated")
-    public void pet_is_updated() {
-    }
-
-    @When("I delete pet by {string}")
-    public void iDeletePetBy(String id){
-
+    @Then("I delete pet by {string}")
+    public void deletePetById(String id){
         response = petEndPoints.deletePet(id);
-        int actualStatusCode = response.getStatusCode();
-        System.out.println(actualStatusCode);
-    }
-
-    @Then("Pet is deleted")
-    public void pet_is_deleted() {
-
+        Assert.assertEquals(200, response.getStatusCode());
     }
 
 }

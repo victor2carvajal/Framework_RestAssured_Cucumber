@@ -13,11 +13,8 @@ Feature: Access to Petstore orders
           "complete": <complete>
         }
       """
-    Then order is placed
     When I find purchase order by "<id>"
-    Then Order is found
-    When I delete purchase order by "<id>"
-    Then Order is deleted
+    Then I delete purchase order by "<id>"
     Examples:
       | id | pet_id | quantity | ship_date                 | status | complete |
       | 10 | 198772 |     7    |  2024-02-22T12:51:26.875Z | approved | true   |
