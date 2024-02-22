@@ -35,7 +35,9 @@ public class storeSteps {
 
     @When("I delete purchase order by {string}")
     public void deletePurchaseOrderById(String id){
-
+        response = storeEndPoints.deletePurchaseOrderById(id);
+        int actualStatusCode = response.getStatusCode();
+        System.out.println(actualStatusCode);
     }
 
     @Then("Order is deleted")

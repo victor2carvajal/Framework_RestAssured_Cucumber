@@ -27,6 +27,6 @@ public class storeEndPoints {
         RestAssured.baseURI = baseURI;
         RequestSpecification request = RestAssured.given();
         request.header("accept", "*/*");
-        return response = request.delete("/pet"+"/"+id);
+        return response = request.delete("/store/order"+"/"+id);
     }
 }
