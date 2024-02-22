@@ -8,3 +8,10 @@ Characteristics
 3. Be sure to use methods to test APIs
 4. Junit to run test cases and make assertions.
 5. Allure Reports is a test reporting tool to run and generate reports.
+
+  # To Run test cases and generarte allure reports:
+
+  ```bash
+mvn clean test -Dallure.results.directory=target/allure-results
+
+  
