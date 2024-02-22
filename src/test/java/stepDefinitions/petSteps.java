@@ -14,19 +14,30 @@ public class petSteps {
     @Given("I add a new pet with the following body:")
     public void userAddNewPet(String requestBody) {
         response = petEndPoints.addNewPet(requestBody);
-        Assert.assertEquals(200, response.getStatusCode());
+    }
+
+    @Then("pet is added with {string}")
+    public void successfulPetAddition(String status_code){
+        Assert.assertEquals(Integer.parseInt(status_code), response.getStatusCode());
     }
 
     @When("I update new pet with the following body")
     public void updatePet(String requestBody){
         response = petEndPoints.updatePet(requestBody);
-        Assert.assertEquals(200, response.getStatusCode());
     }
 
-    @Then("I delete pet by {string}")
+    @Then("pet is update with {string}")
+    public void petIsUpdateWith(String status_code) {
+        Assert.assertEquals(Integer.parseInt(status_code), response.getStatusCode());
+    }
+
+    @When("I delete pet by {string}")
     public void deletePetById(String id){
         response = petEndPoints.deletePet(id);
-        Assert.assertEquals(200, response.getStatusCode());
     }
 
+    @Then("pet is deleted with {string}")
+    public void petIsDeletedWith(String status_code) {
+        Assert.assertEquals(Integer.parseInt(status_code), response.getStatusCode());
+    }
 }
