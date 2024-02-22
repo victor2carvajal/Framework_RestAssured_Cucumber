@@ -17,11 +17,15 @@ public class userSteps {
         Assert.assertEquals(200, response.getStatusCode());
     }
 
-    @When("I updated user")
-    public void updateUser(){
+    @When("I updated user by {string} with the following body:")
+    public void updateUser(String username, String requestBody){
+        response = userEndPoints.updateUser(username,requestBody);
+        Assert.assertEquals(200, response.getStatusCode());
     }
 
-    @Then("I delete user")
-    public void deleteUser(){
+    @Then("I delete user by {string}")
+    public void deleteUser(String username){
+        response = userEndPoints.deleteUser(username);
+        Assert.assertEquals(200, response.getStatusCode());
     }
 }
