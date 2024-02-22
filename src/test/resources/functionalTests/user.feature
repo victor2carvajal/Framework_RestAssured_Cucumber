@@ -15,8 +15,20 @@ Feature: Operations about user
           "userStatus": <user_status>
         }
       """
-    When I updated user
-    Then I delete user
+    When I updated user by "<username>" with the following body:
+          """
+        {
+          "id": <id>,
+          "username": "<username>",
+          "firstName": "<first_name>",
+          "lastName": "<last_name>",
+          "email": "<email>",
+          "password": "<password>",
+          "phone": "<phone>",
+          "userStatus": <user_status>
+        }
+      """
+    Then I delete user by "<username>"
     Examples:
       | id | username | first_name | last_name | email | password | phone | user_status |
       | 10 | theUser  | Victor     |  Carvajal | victor@gmail.com | 12345 | 12345 |  1   |
