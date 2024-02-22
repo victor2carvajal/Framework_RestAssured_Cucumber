@@ -22,17 +22,19 @@ public class storeSteps {
 
     }
 
-    @When("I find purchase order by id")
-    public void findPurchaseOrderById(){
-
+    @When("I find purchase order by {string}")
+    public void findPurchaseOrderById(String id){
+        response = storeEndPoints.findPurchaseOrderById(id);
+        int actualStatusCode = response.getStatusCode();
+        System.out.println(actualStatusCode);
     }
 
     @Then("Order is found")
     public void orderIsFound(){
     }
 
-    @When("I delete purchase order by id")
-    public void deletePurchaseOrderById(){
+    @When("I delete purchase order by {string}")
+    public void deletePurchaseOrderById(String id){
 
     }
 

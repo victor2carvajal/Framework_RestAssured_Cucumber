@@ -16,11 +16,11 @@ public class storeEndPoints {
         return response = request.body(requestBody).post("/store/order");
     }
 
-    public static Response findPurchaseOrderById (String requestBody) {
+    public static Response findPurchaseOrderById (String id) {
         RestAssured.baseURI = baseURI;
         RequestSpecification request = RestAssured.given();
-        request.header("Content-Type", "application/json").header("accept", "application/xml");
-        return response = request.body(requestBody).put("/pet");
+        request.header("accept", "application/xml");
+        return response = request.get("/store/order"+"/"+id);
     }
 
     public static Response deletePurchaseOrderById(String id){

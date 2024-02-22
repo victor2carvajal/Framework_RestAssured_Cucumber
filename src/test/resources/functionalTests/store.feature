@@ -14,9 +14,9 @@ Feature: Access to Petstore orders
         }
       """
     Then order is placed
-    When I find purchase order by id
+    When I find purchase order by "<id>"
     Then Order is found
-    When I delete purchase order by id
+    When I delete purchase order by "<id>"
     Then Order is deleted
     Examples:
       | id | pet_id | quantity | ship_date                 | status | complete |
