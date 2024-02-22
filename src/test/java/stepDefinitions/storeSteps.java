@@ -14,18 +14,30 @@ public class storeSteps {
     @Given("I place an order with the following body:")
     public void userAddNewPet(String requestBody) {
         response = storeEndPoints.placeAnOrder(requestBody);
-        Assert.assertEquals(200, response.getStatusCode());
+    }
+
+    @Then("order is placed with {string}")
+    public void orderIsPlacedWith(String status_code) {
+        Assert.assertEquals(Integer.parseInt(status_code), response.getStatusCode());
     }
 
     @When("I find purchase order by {string}")
     public void findPurchaseOrderById(String id){
         response = storeEndPoints.findPurchaseOrderById(id);
-        Assert.assertEquals(200, response.getStatusCode());
     }
 
-    @Then("I delete purchase order by {string}")
+    @Then("order is found with {string}")
+    public void orderIsFoundWith(String status_code) {
+        Assert.assertEquals(Integer.parseInt(status_code), response.getStatusCode());
+    }
+
+    @When("I delete purchase order by {string}")
     public void deletePurchaseOrderById(String id){
         response = storeEndPoints.deletePurchaseOrderById(id);
-        Assert.assertEquals(200, response.getStatusCode());
+    }
+
+    @Then("order is deleted with {string}")
+    public void orderIsDeletedWith(String status_code) {
+        Assert.assertEquals(Integer.parseInt(status_code), response.getStatusCode());
     }
 }
