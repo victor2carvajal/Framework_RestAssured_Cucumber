@@ -1,1 +1,0 @@
-{"uuid":"fb50f02a-6c78-4e72-9b61-badb28605b23","name":"Scenario Outline: User send bad request and cannot place an order, find and delete purchase order","children":["f3366f02-45e2-4900-9170-dffb9bac9314"],"befores":[],"afters":[],"start":1708626637441,"stop":1708626637512}

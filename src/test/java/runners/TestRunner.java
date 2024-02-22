@@ -6,10 +6,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"pretty","io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
         features = "src/test/resources/functionalTests",
         glue = {"stepDefinitions"},
-        monochrome = true
+        monochrome = true,
+        strict = true
 )
 public class TestRunner {
 }
