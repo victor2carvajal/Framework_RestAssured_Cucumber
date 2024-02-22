@@ -17,25 +17,11 @@ public class userSteps {
         Assert.assertEquals(200, response.getStatusCode());
     }
 
-    @Then("User is created")
-    public  void userIsCreated(){
-
-    }
-
     @When("I updated user")
     public void updateUser(){
     }
 
-    @Then("user is updated")
-    public void userIsUpdate(){
-    }
-
-    @When("I delete user")
+    @Then("I delete user")
     public void deleteUser(){
-    }
-
-    @Then("user is deleted")
-    public void userIsDeleted(){
-
     }
 }

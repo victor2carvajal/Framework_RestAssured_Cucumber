@@ -15,11 +15,8 @@ Feature: Operations about user
           "userStatus": <user_status>
         }
       """
-    Then User is created
     When I updated user
-    Then user is updated
-    When I delete user
-    Then user is deleted
+    Then I delete user
     Examples:
       | id | username | first_name | last_name | email | password | phone | user_status |
       | 10 | theUser  | Victor     |  Carvajal | victor@gmail.com | 12345 | 12345 |  1   |
