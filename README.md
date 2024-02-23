@@ -14,8 +14,7 @@ Characteristics
   ```bash
 mvn clean test -Dallure.results.directory=target/allure-results
 mvn allure:serve
-
----------------
+```
 
  # Performance Testing K6
 
