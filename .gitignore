@@ -3,4 +3,5 @@
 /target/
 /.allure/
 /.idea/
-
+/result.json/
+/test.json/
