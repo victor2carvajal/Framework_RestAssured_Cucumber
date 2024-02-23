@@ -23,7 +23,7 @@ mvn allure:serve
 
  # Performance Testing K6
 
-You could find scripts for performance testing using K6 you could find it at the folder called Performance_Tesitng_K6
+You could find scripts for performance testing using K6 within the folder called Performance_Tesitng_K6
 
 To Run performance testing use:
 
