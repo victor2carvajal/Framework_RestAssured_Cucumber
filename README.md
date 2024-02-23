@@ -13,6 +13,11 @@ Characteristics
 
   ```bash
 mvn clean test -Dallure.results.directory=target/allure-results
+```
+
+# to open allure serve
+
+```bash
 mvn allure:serve
 ```
 
@@ -24,5 +29,5 @@ To Run performance testing use:
 
 ```bash
  k6 run Performance_Testing_K6/main.js --out json=result.json
-
+```
   
