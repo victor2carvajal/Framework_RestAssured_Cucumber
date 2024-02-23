@@ -14,9 +14,8 @@ Characteristics
   ```bash
 mvn clean test -Dallure.results.directory=target/allure-results
 mvn allure:serve
-´´´
 
-# Performance Testing K6
+ # Performance Testing K6
 
 You could find scripts for performance testing using K6 you could find it at the folder called Performance_Tesitng_K6
 
